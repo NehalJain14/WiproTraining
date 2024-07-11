@@ -2,7 +2,8 @@
 
 
 import java.util.*;
-interface Account {
+interface Account 
+{
     void deposit();
     void withdraw();
     void displayBalance(); 
@@ -10,16 +11,12 @@ interface Account {
 }
 
 
-
-
-
 public class BankManagement implements Account {
     private long accountNumber=1234567890;
     private double balance=1000;
     private double amount;
-    int PIN=9876;
-	
-     Scanner s=new Scanner(System.in);
+    int PIN=9876;	
+Scanner s=new Scanner(System.in);
 
 
 
@@ -27,16 +24,15 @@ public class BankManagement implements Account {
 {
 
 	System.out.println("Enter your account number:");
-         long accountN = s.nextLong();
+        long accountN = s.nextLong();
 	System.out.println("Enter your PIN:");
-         int pin = s.nextInt();
+        int pin = s.nextInt();
 
 	if(accountN==accountNumber && pin==PIN)
 	{
 	return true;
 	}
 	
-
 	else{
 	System.out.println("Your account number or PIN is incorrect.");
 	return false;
@@ -44,14 +40,12 @@ public class BankManagement implements Account {
 }
 
 
-
- 
     public void deposit()
  {
 	if(bankDetails())
 	{
 	System.out.println("Enter amount you have to deposit:");
-	 amount= s.nextDouble();
+	amount= s.nextDouble();
 
         balance += amount;
         System.out.println("Deposited amount: " + amount);
@@ -59,7 +53,6 @@ public class BankManagement implements Account {
 
 	else{
 	System.out.println("This is not accessible.");}
-	
 	System.out.println("Thankyou!! Your session is end now.'-' ");
 
 	
@@ -75,7 +68,7 @@ public class BankManagement implements Account {
 		double amount= s.nextDouble();
 
         	if (amount <= balance) {
-           	 balance -= amount;
+           	balance -= amount;
             	System.out.println("Withdraw amount is: " + amount);
 		System.out.println("Your Current Balance is: " + balance);			
         	}
@@ -104,8 +97,7 @@ public class BankManagement implements Account {
 	
 	else
 	{
-	System.out.println("Balance cannot be shown as your PIN is incorrect");
-	}
+	System.out.println("Balance cannot be shown as your PIN is incorrect");}
 
 	System.out.println("Thankyou!! Your session is end now.'-' ");
     
@@ -113,19 +105,13 @@ public class BankManagement implements Account {
 }
 
 
-
-
-
-
 class Main {
 
     public static void main(String[] args) {
 
         BankManagement obj = new BankManagement();
-
         Scanner s=new Scanner(System.in);
         System.out.println("Choose your Service option:");
-
 	System.out.println("1: Deposit Money");
 	System.out.println("2: Withdraw Money");
 	System.out.println("3: Show Balance");
@@ -144,9 +130,6 @@ class Main {
 	default:
 		System.out.println("Choose your Service option, else your session is closed.");
 	}
-		
-
-
 }
 }
 
