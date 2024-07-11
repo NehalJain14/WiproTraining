@@ -1,4 +1,4 @@
-//User Registration management system
+//Bank management system
 
 
 import java.util.*;
